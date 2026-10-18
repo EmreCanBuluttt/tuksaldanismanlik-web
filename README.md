@@ -35,6 +35,12 @@ otomatik olarak `https://www.tuksaldanismanlik.com` adresine yönlendirilir.
 Asıl site `TuksalWeb/site/` klasöründe (ayrı, statik). Hazır olunca o klasörün içeriği
 `docs/` yerine konur (`CNAME` dosyası korunarak) ve push edilir. DNS değişmez.
 
+## Görsel ilkesi
+
+Kapakta ve paylaşım görselinde (`docs/assets/img/paylasim.jpg`) **insan yok**: arka plan logodaki işaretten
+türetilmiş bir grafik. Yapay zekâyla üretilmiş kişiler kurucu ya da ekip sanılabildiği için kullanılmıyor
+(müşteri kararı, 18 Eki 2026). Gerçek fotoğraf gerekiyorsa yalnız müşterinin kendi fotoğrafları.
+
 ## Açık konular (18 Eki 2026)
 
 - **E-posta yok.** Brief'teki `destek@mcpdanismanlik.com` adresinin alan adı (`mcpdanismanlik.com`)
