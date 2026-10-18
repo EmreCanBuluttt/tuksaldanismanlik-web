@@ -49,8 +49,8 @@ türetilmiş bir grafik. Yapay zekâyla üretilmiş kişiler kurucu ya da ekip s
   `info@tuksaldanismanlik.com`) kurulunca `_kaynak/sayfa.html` içindeki yorumu aç.
   Asıl sitedeki (`TuksalWeb/site/assets/js/config.js`, `content/pages.json`) aynı adres de düzeltilmeli.
 - **Telefon** briefte yok; numara gelince aynı şekilde yorumu aç.
-- **HTTPS:** DNS GitHub'a döndükten sonra GitHub sertifikayı birkaç dakika–birkaç saatte üretir.
-  Sonra Settings → Pages → "Enforce HTTPS" açılır (ya da
-  `gh api -X PUT repos/EmreCanBuluttt/tuksaldanismanlik-web/pages -F https_enforced=true`).
+- **HTTPS:** 18 Eki 2026'dan beri açık ve zorunlu (Let's Encrypt, `www` + kök alan adı, GitHub kendisi yeniler).
+  Sertifika DNS doğru olduğu hâlde gelmezse: Settings → Pages'te özel alan adını kaldırıp yeniden ekle
+  (API: `cname` önce `null`, sonra `www.tuksaldanismanlik.com`) — 18 Eki'de sertifika bununla anında çıktı.
 - İsteğe bağlı güvenlik: GitHub → Settings → Pages → "Verified domains" ile alan adını hesaba doğrula
   (GoDaddy'ye bir TXT kaydı eklenir); başka bir GitHub hesabının alan adını sahiplenmesini engeller.
