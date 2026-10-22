@@ -4,10 +4,23 @@
     "legal_name": "Emel Özbek Eğitim ve Proje Ajansı",
     "tagline": "Kurumlara Özel Deneyimsel Gelişim Programı",
     "url": "https://www.tuksaldanismanlik.com",
-    "email": "",
-    "address_lines": [],
-    "og_image": "assets/img/kart.jpg",
-    "locale": "tr_TR"
+    "email": "info@tuksaldanismanlik.com",
+    "address_lines": [
+      "4244 Sk. No:1/84",
+      "Bornova / İZMİR"
+    ],
+    "og_image": "assets/img/kart-logo.jpg",
+    "locale": "tr_TR",
+    "telephone": [
+      "+90 532 305 16 93",
+      "+90 533 790 06 70"
+    ],
+    "address": {
+      "streetAddress": "4244 Sk. No:1/84",
+      "addressLocality": "Bornova",
+      "addressRegion": "İzmir",
+      "addressCountry": "TR"
+    }
   },
   "nav": [
     {

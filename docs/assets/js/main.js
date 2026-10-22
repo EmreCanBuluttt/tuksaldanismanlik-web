@@ -239,7 +239,13 @@
       if (CFG.formEndpoint) {
         if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = "Gönderiliyor…"; }
         fetch(CFG.formEndpoint, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(data) })
-          .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); show("Mesajınız iletildi. En kısa sürede size dönüş yapacağız.", true); form.reset(); })
+          .then(function (r) {
+            // Form services answer 200 with {"success": false} when the form is not activated yet: treat that as a failure.
+            return r.json().catch(function () { return {}; }).then(function (j) {
+              if (!r.ok || j.success === false || j.success === "false" || j.ok === false) throw new Error("HTTP " + r.status);
+              show("Mesajınız iletildi. En kısa sürede size dönüş yapacağız.", true); form.reset();
+            });
+          })
           .catch(function () { show(CFG.email ? "Mesaj gönderilemedi. Lütfen e-posta ile bize ulaşın: " + CFG.email : "Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyin.", false); })
           .then(function () { if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label; } });
       } else {
@@ -252,20 +258,37 @@
   }
 
   /* ---------- config-driven contact bits (empty = hidden) ---------- */
-  function toggle(el, show) { var li = el.closest("li"); (li || el).hidden = !show; if (show) el.hidden = false; }
+  var HOOKS = "[data-email], [data-phone], [data-whatsapp], [data-address], [data-maps]";
+  // Hide the element itself; a list row is hidden only when every contact hook inside it is hidden.
+  function toggle(el, show) {
+    el.hidden = !show;
+    var li = el.closest("li");
+    if (li) li.hidden = !$$(HOOKS, li).some(function (h) { return !h.hidden; });
+  }
   $$("[data-email]").forEach(function (a) {
     if (CFG.email) { a.textContent = CFG.email; a.href = "mailto:" + CFG.email; }
     toggle(a, !!CFG.email);
   });
+  var phones = (CFG.phones || (CFG.phone ? [CFG.phone] : [])).filter(Boolean);
   $$("[data-phone]").forEach(function (el) {
-    if (CFG.phone) { el.textContent = CFG.phone; el.href = "tel:" + CFG.phone.replace(/[^+\d]/g, ""); }
-    toggle(el, !!CFG.phone);
+    var ph = phones[+el.getAttribute("data-phone") || 0];
+    if (ph) { el.textContent = ph; el.href = "tel:" + ph.replace(/[^+\d]/g, ""); }
+    toggle(el, !!ph);
+  });
+  $$("[data-address]").forEach(function (el) {
+    if (CFG.address) el.textContent = CFG.address;
+    toggle(el, !!CFG.address);
+  });
+  $$("[data-maps]").forEach(function (a) {
+    var q = CFG.mapsQuery || CFG.address;
+    if (q) a.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+    toggle(a, !!q);
   });
   $$("[data-whatsapp]").forEach(function (el) {
     if (CFG.whatsapp) el.href = "https://wa.me/" + CFG.whatsapp;
     toggle(el, !!CFG.whatsapp);
   });
-  var hasChannel = !!(CFG.email || CFG.phone || CFG.whatsapp);
+  var hasChannel = !!(CFG.email || phones.length || CFG.whatsapp);
   $$("[data-contact-empty]").forEach(function (el) { el.hidden = hasChannel; });
   $$(".contact-list").forEach(function (ul) { ul.hidden = !hasChannel; });
   // elements that only make sense when visitors can actually reach the client (CTA buttons, footer column)

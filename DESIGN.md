@@ -101,7 +101,13 @@ Pages, titles, descriptions and navigation live in `content/pages.json`.
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>  <!-- sliders -->
 ```
 
-## Images — NO PHOTOS OF PEOPLE (client decision, 18 Oct 2026)
+## Images — NO RECOGNISABLE FACES (client decision, 18 Oct 2026)
+
+Stock photos from Burst (see GORSEL-KAYNAKLARI.md) are used everywhere: `.page-hero > img` (16:9, decorative alt=""),
+home `.hero-slide > img`, `.card-media.card-photo > img + .cv-icon.cv-badge`, `figure.feature-media.feature-photo > img + .cv-icon.cv-badge`.
+Only faceless images (spaces, objects, hands, people from behind). The icon-only visuals below remain as a fallback.
+
+### Icon-only fallback (legacy)
 
 The site ships without photos. Heroes use the CSS brand background (navy + outlined logo mark);
 cards use `<div class="card-media card-visual" aria-hidden="true"><span class="cv-icon"><svg…/></span></div>`

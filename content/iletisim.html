@@ -1,10 +1,8 @@
 <!-- İletişim: hero, contact channels + message form (contact-grid).
-     Every channel comes from assets/js/config.js: e-mail / phone / WhatsApp rows stay hidden while empty, the form is shown
-     only when formEndpoint or e-mail is set, and the "coming soon" notice shows while no channel is configured.
-     The street address was removed at the client's request (18 Oct 2026).
-     Defaults in this file match the current "no channel" state so nothing empty flashes before/without JS:
-     the contact list starts hidden and the notice starts visible; main.js flips both once config.js has a channel. -->
+     Every channel comes from assets/js/config.js (address, phones, e-mail, WhatsApp); empty values stay hidden.
+     The form is shown when formEndpoint or e-mail is set; the "coming soon" notice shows only while no channel exists. -->
 <section class="page-hero">
+  <img src="assets/img/foto/blank-notebook-on-creative-workspace-genis.jpg" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
   <div class="container">
     <ol class="breadcrumb" aria-label="Sayfa yolu">
       <li><a href="index.html">Ana Sayfa</a></li>
@@ -12,8 +10,8 @@
     </ol>
     <span class="eyebrow">Kurumsal</span>
     <h1>İletişim</h1>
-    <p class="lead" data-contact-only hidden>Kurumunuza özel bir program, etkinlik ya da danışmanlık için bize yazın; ihtiyacınızı birlikte değerlendirelim.</p>
-    <p class="lead" data-contact-empty>Kurumlara özel eğitim, organizasyon ve danışmanlık programları tasarlıyor ve uyguluyoruz.</p>
+    <p class="lead" data-contact-only>Kurumunuza özel bir program, etkinlik ya da danışmanlık için bize yazın; ihtiyacınızı birlikte değerlendirelim.</p>
+    <p class="lead" data-contact-empty hidden>Kurumlara özel eğitim, organizasyon ve danışmanlık programları tasarlıyor ve uyguluyoruz.</p>
   </div>
 </section>
 
@@ -25,15 +23,19 @@
         <span class="eyebrow">TUKSAL Danışmanlık</span>
         <h2>İletişim Bilgileri</h2>
         <p class="lead">Emel Özbek Eğitim ve Proje Ajansı</p>
-        <p class="notice" data-contact-empty>Telefon ve e-posta bilgilerimiz çok yakında bu sayfada yayımlanacaktır.</p>
-        <ul class="contact-list" hidden>
+        <p class="notice" data-contact-empty hidden>Telefon ve e-posta bilgilerimiz çok yakında bu sayfada yayımlanacaktır.</p>
+        <ul class="contact-list">
           <li>
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><strong>Adres</strong><span data-address></span><a class="contact-sub" href="#" data-maps target="_blank" rel="noopener">Haritada aç</a></div>
+          </li>
+        <li>
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg></span>
             <div><strong>E-posta</strong><a href="#" data-email></a></div>
           </li>
           <li>
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></span>
-            <div><strong>Telefon</strong><a href="#" data-phone></a></div>
+            <div><strong>Telefon</strong><a href="#" data-phone="0"></a><a href="#" data-phone="1"></a></div>
           </li>
           <li>
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg></span>

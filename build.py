@@ -16,7 +16,7 @@ SITE = ROOT / "docs"
 TEMPLATE = (ROOT / "templates" / "page.html").read_text(encoding="utf-8")
 CFG = json.loads((CONTENT / "pages.json").read_text(encoding="utf-8"))
 S = CFG["site"]
-BUILD = datetime.date.today().strftime("%Y%m%d")
+BUILD = datetime.datetime.now().strftime("%Y%m%d%H%M")  # cache-busting ?v= for CSS/JS; changes on every build
 CARET = ('<svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" '
          'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>')
 
@@ -83,6 +83,11 @@ def jsonld(page, canonical):
     }
     if S.get("email"):
         org["email"] = S["email"]
+    if S.get("telephone"):
+        org["telephone"] = S["telephone"]
+    if S.get("address"):
+        org["address"] = {"@type": "PostalAddress", **S["address"]}
+    org["logo"] = S["url"].rstrip("/") + "/assets/img/logo/tuksal-logo.png"
     return json.dumps(org, ensure_ascii=False)
 
 

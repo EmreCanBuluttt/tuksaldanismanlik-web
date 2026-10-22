@@ -3,3 +3,6 @@ __pycache__/
 # client brief (private) and archived AI photos with people (not for publication)
 kaynak/
 _gorsel-arsiv/
+
+# separate project (e-mail materials) — has its own repo
+Mathvivor/

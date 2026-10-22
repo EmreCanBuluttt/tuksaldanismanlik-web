@@ -27,18 +27,18 @@ git add -A && git commit -m "..." && git push
 
 Build gerektirmeyen dosyalar (doğrudan düzenle + push):
 
-- `docs/assets/js/config.js` — e-posta, telefon, WhatsApp, form adresi. **Boş bırakılan her kanal sitede gizlenir.**
-  Hepsi boşken İletişim sayfası "çok yakında" notu gösterir ve form gizlenir. Form, `formEndpoint`
-  (ör. Formspree) ya da `email` dolunca görünür.
+- `docs/assets/js/config.js` — adres, telefonlar, e-posta, WhatsApp, form adresi. **Boş bırakılan her kanal sitede gizlenir.**
+  Form, `formEndpoint` ya da `email` dolunca görünür; `formEndpoint` boşken ziyaretçinin e-posta uygulamasını
+  `email` adresine hazır mesajla açar (mailto).
 - `docs/assets/data/etkinlikler.js` — etkinlik takvimi (dosyada örnek kayıt şablonu var). Boşken
   "Yaklaşan etkinlik bulunmuyor" yazar.
 
 ## Görsel ilkesi
 
-Sitede **insan fotoğrafı yok.** Yapay zekâyla üretilmiş kişiler kurucu ya da ekip sanılabildiği için
-kaldırıldı (müşteri kararı, 18 Eki 2026). Başlıklarda lacivert zemin + logo işareti, kart ve panellerde
-hizmete özel ikon kutuları kullanılıyor. Gerçek fotoğraf gerekiyorsa yalnız müşterinin kendi fotoğrafları.
-Emel Özbek fotoğrafı gelince `content/hakkimizda.html` içindeki `.founder-placeholder` bloğu değiştirilir.
+Fotoğraflar **Burst by Shopify** stok arşivinden (ücretsiz ticari lisans); liste ve lisans `GORSEL-KAYNAKLARI.md`'de.
+**Yüzü tanınabilen kimse yok:** yapay zekâ ya da stok fark etmez, sitedeki kişi kurucu ya da ekip sanılabildiği için
+(müşteri kararı, 18 Eki 2026) yalnız mekân, nesne, el ve arkadan görülen kişi fotoğrafları kullanılır.
+Her fotoğrafın köşesinde hizmetin ikonu rozet olarak durur. Emel Özbek fotoğrafı gelince `content/hakkimizda.html`'e eklenir.
 
 ## Alan adı, DNS, HTTPS
 
@@ -49,11 +49,18 @@ Sertifika DNS doğru olduğu hâlde gelmezse: Settings → Pages'te özel alan a
 
 ## Açık konular
 
-- **İletişim kanalı:** e-posta, telefon ve form henüz tanımlı değil. Gelince `docs/assets/js/config.js`'e yaz;
-  iletişim sayfası, footer ve sayfa sonu çağrıları kendiliğinden açılır.
+- **E-posta kutusu yok:** `info@tuksaldanismanlik.com` sitede yayında ama alan adında MX kaydı yok; bu adrese giden
+  posta şu an teslim edilemez. GoDaddy'de bir e-posta hizmeti (Microsoft 365, Google Workspace, Zoho ya da
+  yönlendirme) kurulunca MX kayıtları DNS'e eklenmeli. Kontrol: `dig +short MX tuksaldanismanlik.com`.
+- **Formun doğrudan info@'ya düşmesi:** posta kutusu çalışınca `config.js` → `formEndpoint:
+  "https://formsubmit.co/ajax/info@tuksaldanismanlik.com"` yaz, siteden bir deneme mesajı gönder ve info@'ya gelen
+  etkinleştirme e-postasındaki bağlantıya tıkla. O zamana kadar form mailto ile çalışır. (Posta kutusu yokken
+  formEndpoint yazma: servis etkinleştirme e-postasını teslim edemez.)
+
 - **Referanslar** sayfası gizli (`pages.json` → `hidden`). Taranmış mektuplar gelince `content/referanslar.html`
   içindeki talimata göre ekle ve `hidden`'ı kaldır.
-- **Mathvivor** kartı şimdilik bağlantısız; bağlantı eklemek için `content/anlasmali-markalar.html`'deki nota bak.
+- **İş birliği yapılan markalar:** Mathvivor (www.mathvivor.com bağlantılı), Matematik ve Bilim Festivali (logo),
+  Guaj Danışmanlık (logosu ve sitesi yok; yazıyla gösteriliyor). Logolar `docs/assets/img/markalar/`.
 - **KVKK metni** yayına almadan önce müşteriyle birlikte gözden geçirilmeli.
 
 ## Yapım aşaması moduna dönmek

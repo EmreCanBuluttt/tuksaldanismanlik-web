@@ -229,7 +229,7 @@ blockquote { margin: 0; }
 .page-hero .eyebrow { color: var(--gold); }
 .page-hero--plain { background: var(--navy); }
 .breadcrumb { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; font-size: .84rem; color: rgba(255, 255, 255, .7); }
-.breadcrumb li + li::before { content: "/"; margin-right: 6px; opacity: .5; }
+.breadcrumb li:not(:last-child)::after { content: "/"; margin-left: 6px; opacity: .5; }  /* separator stays at the end of a wrapped line */
 .breadcrumb a { color: rgba(255, 255, 255, .85); }
 .breadcrumb a:hover { color: var(--gold); }
 
@@ -468,7 +468,7 @@ a.icon-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); c
    ========================================================================= */
 :root {
   --brand-bg: radial-gradient(900px 620px at 85% 18%, rgba(201,154,59,.12), transparent 62%), radial-gradient(820px 640px at 0% 100%, rgba(29,60,102,.72), transparent 62%), linear-gradient(155deg, #0a1a30 0%, #10294a 58%, #0c2140 100%);
-  --mark-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg transform='rotate(-3 24 24)' fill='none' stroke-width='1.2' vector-effect='non-scaling-stroke'%3E%3Crect x='.6' y='.6' width='46.8' height='46.8' rx='11.4' stroke='%23c99a3b' stroke-opacity='.45' vector-effect='non-scaling-stroke'/%3E%3Crect x='10' y='27' width='7' height='11' rx='1.5' stroke='%23c99a3b' stroke-opacity='.7' vector-effect='non-scaling-stroke'/%3E%3Crect x='20.5' y='19' width='7' height='19' rx='1.5' stroke='%23c99a3b' stroke-opacity='.7' vector-effect='non-scaling-stroke'/%3E%3Crect x='31' y='10' width='7' height='28' rx='1.5' stroke='%23ffffff' stroke-opacity='.6' vector-effect='non-scaling-stroke'/%3E%3C/g%3E%3C/svg%3E");
+  --mark-svg: url("../img/logo/tuksal-isaret-acik.svg");
   --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 }
 [hidden] { display: none !important; }
@@ -566,3 +566,59 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .nav .sub { max-height: calc(100vh - var(--header-h) - 24px); overflow-y: auto; overscroll-behavior: contain; }
   .nav .sub a { padding: 7px 12px; }
 }
+
+/* =========================================================================
+   Stock photography (Burst by Shopify, free commercial licence — see GORSEL-KAYNAKLARI.md).
+   Only faceless photos: spaces, objects, hands, people seen from behind, silhouettes.
+   Every photo keeps the service icon as a small badge so the icon system stays.
+   ========================================================================= */
+/* inner page heroes */
+.page-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; z-index: 0; }
+.page-hero:has(> img)::after { content: ""; }
+.page-hero:has(> img)::before { display: none; }
+
+/* home hero slides */
+.hero:has(.hero-slide img) .hero-slides, .hero:has(.hero-slide img) .hero-slide { display: block; }
+.hero:has(.hero-slide img) .hero-art { display: none; }
+@media (max-width: 760px) {
+  .hero-slide::after { background: linear-gradient(180deg, rgba(11,29,53,.78) 0%, rgba(11,29,53,.9) 100%); }
+}
+
+/* card + panel photos with icon badge */
+.card-media.card-photo { position: relative; aspect-ratio: 16 / 10; background: var(--navy-deep); }
+.feature-media.feature-photo { position: relative; background: var(--navy-deep); }
+.cv-icon.cv-badge { position: absolute; left: 16px; bottom: 16px; z-index: 2; width: 48px; height: 48px; border-radius: 14px; background: rgba(11,29,53,.82); border-color: rgba(231,201,131,.5); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.cv-icon.cv-badge svg { width: 24px; height: 24px; }
+.card:hover .cv-icon.cv-badge { transform: none; }
+.feature-photo .cv-icon.cv-badge { left: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 16px; }
+.feature-photo .cv-icon.cv-badge svg { width: 28px; height: 28px; }
+@media (min-width: 861px) { .service-block .feature-photo { position: sticky; top: calc(var(--header-h) + 32px); } }
+@media (max-width: 860px) {
+  .split > .feature-photo { order: 2; }
+  .feature-photo img { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 600px) { .card-media.card-photo { aspect-ratio: 16 / 9; height: auto; } }
+/* Photo heroes: a touch more overlay where the heading sits (review 22 Oct) */
+.page-hero:has(> img)::after { background: linear-gradient(90deg, rgba(11, 29, 53, .94) 0%, rgba(11, 29, 53, .8) 52%, rgba(11, 29, 53, .45) 100%); }
+@media (max-width: 760px) { .page-hero:has(> img)::after { background: linear-gradient(180deg, rgba(11, 29, 53, .8) 0%, rgba(11, 29, 53, .88) 100%); } }
+@media (min-width: 761px) { .hero-slide::after { background: linear-gradient(90deg, rgba(11, 29, 53, .9) 0%, rgba(11, 29, 53, .74) 50%, rgba(11, 29, 53, .3) 100%); } }
+
+/* Real TUKSAL logo (22 Oct 2026): header lockup, footer stacked logo, monogram watermark */
+.brand-logo { display: block; height: 46px; width: auto; }
+.site-footer .brand-logo--footer { height: 120px; }
+@media (max-width: 600px) { .brand-logo { height: 38px; } .site-footer .brand-logo--footer { height: 104px; } }
+.page-hero::before { opacity: .12; }
+.card-visual::after, .feature-visual::after { opacity: .1; }
+.logo-card img { max-height: 96px; }
+.logo-card--logo { min-height: 150px; }
+.contact-list div > a, .contact-list div > span { display: block; }
+.contact-list .contact-sub { margin-top: 4px; font-size: .86rem; font-weight: 600; color: var(--gold-deep); }
+.footer-contact span { color: inherit; }
+
+/* Final QA fixes (22 Oct 2026) */
+.nowrap { white-space: nowrap; }
+.icon-card .icon { flex-shrink: 0; }
+.logo-strip .logo-card { flex: 0 0 264px; width: 264px; max-width: 100%; min-width: 0; }
+.tagline, h1, h2, h3 { text-wrap: balance; }
+@media (max-width: 560px) { .form-row { row-gap: 0; } }
+.section:not(.section--alt):not(.section--warm):not(.section--navy) + .section--tight:has(.cta-band) { padding-top: 0; }
