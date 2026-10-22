@@ -1,0 +1,116 @@
+<!-- Referanslar: hero, reference-letter grid (scanned-letter placeholders + lightbox dialog), trust approach (split with brief sentences), explore links (icon cards), CTA -->
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb" aria-label="Sayfa yolu">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li aria-current="page">Referanslar</li>
+    </ol>
+    <span class="eyebrow">Kurumsal</span>
+    <h1>Referanslar</h1>
+    <p class="lead">Birlikte çalıştığımız kurumların tavsiye ve referans mektupları.</p>
+  </div>
+</section>
+
+<!-- Reference letters: cards open the scanned letter in the #lightbox dialog (wired in main.js via data-lightbox) -->
+<section class="section" id="referans-mektuplari">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="eyebrow">Referanslar</span>
+      <h2>Tavsiye ve referans mektupları</h2>
+      <p class="lead">Birlikte çalıştığımız kurumların tavsiye ve referans mektupları bu sayfada yayınlanır.</p>
+    </div>
+    <!--
+      TARANMIŞ REFERANS MEKTUBU EKLEME (müşteri mektupları taratıp gönderdiğinde):
+      1) JPG dosyasını site/assets/img/referanslar/ klasörüne kopyalayın (ör. kurum-adi.jpg).
+      2) Yer tutucu kartı (<div class="ref-card ref-card--placeholder reveal">) tıklanabilir karta çevirin:
+         <button type="button" class="ref-card reveal" data-lightbox='assets/img/referanslar/kurum-adi.jpg' data-caption='Kurum adı — referans mektubu'>
+         ve kapanış </div> etiketini </button> yapın (büyütme penceresi main.js ile otomatik çalışır).
+      3) Aynı kartta .ref-thumb içindeki <div class="doc-placeholder">...</div> bloğunu silip yerine
+         <img src='assets/img/referanslar/kurum-adi.jpg' alt='Kurum adı referans mektubu' loading='lazy'> koyun.
+      4) .ref-meta içindeki <strong> satırına kurumun adını, <span> satırına mektubun türünü yazın;
+         data-caption değerini de aynı metinle güncelleyin.
+      Yeni bir mektup için kartlardan birini kopyalayıp çoğaltmanız yeterli; kullanılmayan yer tutucu kartları silin.
+    -->
+    <div class="ref-grid">
+      <div class="ref-card ref-card--placeholder reveal">
+        <div class="ref-thumb"><div class="doc-placeholder"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="ref-meta"><strong>Referans Mektubu</strong><span>Taranmış mektup eklenecek</span></div>
+      </div>
+      <div class="ref-card ref-card--placeholder reveal">
+        <div class="ref-thumb"><div class="doc-placeholder"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="ref-meta"><strong>Referans Mektubu</strong><span>Taranmış mektup eklenecek</span></div>
+      </div>
+      <div class="ref-card ref-card--placeholder reveal">
+        <div class="ref-thumb"><div class="doc-placeholder"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="ref-meta"><strong>Referans Mektubu</strong><span>Taranmış mektup eklenecek</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox dialog: one per page; main.js fills img/figcaption from the clicked card's data attributes -->
+<dialog class="lightbox" id="lightbox" aria-label="Referans mektubu">
+  <figure class="lightbox-inner">
+    <button type="button" class="lightbox-close" aria-label="Kapat">×</button>
+    <img alt="">
+    <figcaption></figcaption>
+  </figure>
+</dialog>
+
+<!-- Trust approach: verbatim brief sentences on recommendation and long-term relationships -->
+<section class="section section--warm" id="guven">
+  <div class="container">
+    <div class="split split--reverse">
+      <figure class="feature-media feature-visual reveal" aria-hidden="true"><span class="cv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span></figure>
+      <div>
+        <span class="eyebrow">Yaklaşımımız</span>
+        <h2>İyi deneyim memnuniyet yaratır, güçlü deneyim sadakat yaratır.</h2>
+        <p class="lead">Amaç; müşterinin yalnızca tekrar gelmesini değil, markanızı tercih etmesini, güvenmesini ve başkalarına tavsiye etmesini sağlamaktır.</p>
+        <p>TUKSAL Danışmanlık olarak hedefimiz, işletmelerin müşterileriyle yalnızca işlem yapan değil, uzun vadeli ilişki kuran markalara dönüşmelerine katkı sağlamaktır.</p>
+        <a class="link-arrow" href="musteri-yonetimi-programi.html">Müşteri Yönetimi Programı</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Explore: navigational cards to the pages that give references their context -->
+<section class="section section--alt" id="daha-fazlasi">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Daha Fazlası</span>
+      <h2>Bizi daha yakından tanıyın</h2>
+    </div>
+    <div class="grid grid-3">
+      <a class="icon-card reveal" href="hakkimizda.html">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>Hakkımızda</h3>
+        <p>Emel Özbek Eğitim ve Proje Ajansı çatısı altında kurumlara özel deneyimsel gelişim programı.</p>
+      </a>
+      <a class="icon-card reveal" href="hizmetler.html">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+        <h3>Hizmetlerimiz</h3>
+        <p>Eğitim ve organizasyon programları, marka koruma ve hikâyesi, pazarlama ve dinamik satış.</p>
+      </a>
+      <a class="icon-card reveal" href="anlasmali-markalar.html">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13l1.5 9-5-3-5 3 1.5-9"/></svg></span>
+        <h3>Anlaşmalı Marka ve Kurumlar</h3>
+        <p>İş birliği yaptığımız anlaşmalı marka ve kurumlar.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Siz de birlikte çalışalım</h2>
+        <p>Kurumunuzun ihtiyacını paylaşın; hedefleriniz doğrultusunda eğitim, organizasyon ve danışmanlık çözümü önerelim.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="iletisim.html">İletişime Geçin</a>
+        <a class="btn btn--ghost" href="hizmetler.html">Hizmetler</a>
+      </div>
+    </div>
+  </div>
+</section>

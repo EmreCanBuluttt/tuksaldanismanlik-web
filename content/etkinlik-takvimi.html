@@ -1,0 +1,84 @@
+<!-- Etkinlik Takvimi: hero, monthly calendar + upcoming list (both rendered by main.js from assets/data/etkinlikler.js — no events hard-coded here), how to participate (3 icon cards, hidden while there are no upcoming events), CTA -->
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb" aria-label="Sayfa yolu">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li aria-current="page">Etkinlik Takvimi</li>
+    </ol>
+    <span class="eyebrow">TUKSAL Danışmanlık</span>
+    <h1>Etkinlik Takvimi</h1>
+    <p class="lead">Seminer, atölye ve eğitim etkinliklerimiz planlandıkça bu takvimde duyurulur.</p>
+  </div>
+</section>
+
+<!-- Calendar + upcoming events. #calendar and #event-list are filled by main.js; edit docs/assets/data/etkinlikler.js to change events (no build needed). -->
+<section class="section" id="takvim">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Takvim</span>
+      <h2>Aylık takvim ve yaklaşan etkinlikler</h2>
+      <p class="lead">Planlanan etkinlikler takvimde işaretlenir ve Yaklaşan Etkinlikler listesinde yer alır.</p>
+    </div>
+    <div class="calendar-layout">
+      <div id="calendar" class="calendar" role="region" aria-label="Aylık takvim"></div>
+      <div>
+        <span class="eyebrow">Etkinlik Listesi</span>
+        <h2>Yaklaşan Etkinlikler</h2>
+        <div id="event-list" class="event-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How to participate: hidden by main.js while there are no upcoming events (data-needs-events).
+     The registration card and lead need a contact channel; their data-contact-empty twins show while none is configured. -->
+<section class="section section--alt" id="katilim" data-needs-events>
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="eyebrow">Nasıl Katılırım?</span>
+      <h2>Etkinliklere katılım</h2>
+      <p class="lead" data-contact-only hidden>Takvimdeki bir etkinliğe katılmak ya da aynı programı kurumunuz için planlamak istiyorsanız bize ulaşmanız yeterli.</p>
+      <p class="lead" data-contact-empty>Etkinlikleri bu takvimden takip edebilirsiniz; takvimdeki programlar kurumunuza özel olarak da planlanabilir.</p>
+    </div>
+    <div class="grid grid-3">
+      <a class="icon-card reveal" href="iletisim.html" data-contact-only hidden>
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span>
+        <h3>Kayıt ve bilgi</h3>
+        <p>Katılmak istediğiniz etkinliği belirterek bize yazın; kayıt, içerik ve katılım koşulları hakkında bilgi verelim.</p>
+      </a>
+      <a class="icon-card reveal" href="#event-list" data-contact-empty>
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></span>
+        <h3>Etkinlik ayrıntıları</h3>
+        <p>Her etkinliğin tarihi ve ayrıntıları Yaklaşan Etkinlikler listesinde yer alır.</p>
+      </a>
+      <a class="icon-card reveal" href="egitim-ve-organizasyon.html">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span>
+        <h3>Kurumunuza özel tarih</h3>
+        <p>Takvimdeki programlar kurumunuz için ayrıca planlanabilir; içeriği, tarihi ve mekanı ihtiyaçlarınız doğrultusunda belirlenir.</p>
+      </a>
+      <a class="icon-card reveal" href="#takvim">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+        <h3>Takvimi takip edin</h3>
+        <p>Yeni etkinlikler, tarih değişiklikleri ve kayıt durumu bu sayfada güncellenir; takvimi düzenli olarak kontrol edin.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA: works with and without a contact channel (data-contact-only / data-contact-empty are toggled by main.js from config.js) -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2 data-contact-only hidden>Kurumunuza özel bir program mı planlıyorsunuz?</h2>
+        <h2 data-contact-empty>Kurumunuza özel programlar</h2>
+        <p data-contact-only hidden>Seminer, atölye ve eğitim programlarımız kurumunuza özel olarak da planlanabilir. İhtiyacınızı paylaşın; size uygun tarihi birlikte belirleyelim.</p>
+        <p data-contact-empty>Seminer, atölye ve eğitim programlarımız kurumunuza özel olarak da planlanabilir; tüm programlarımızı Eğitim ve Organizasyon sayfasında inceleyebilirsiniz.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="iletisim.html" data-contact-only hidden>İletişime Geçin</a>
+        <a class="btn btn--primary" href="egitim-ve-organizasyon.html">Programları İnceleyin</a>
+      </div>
+    </div>
+  </div>
+</section>

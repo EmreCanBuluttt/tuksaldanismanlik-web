@@ -1,0 +1,97 @@
+<!-- İletişim: hero, contact channels + message form (contact-grid).
+     Every channel comes from assets/js/config.js: e-mail / phone / WhatsApp rows stay hidden while empty, the form is shown
+     only when formEndpoint or e-mail is set, and the "coming soon" notice shows while no channel is configured.
+     The street address was removed at the client's request (18 Oct 2026).
+     Defaults in this file match the current "no channel" state so nothing empty flashes before/without JS:
+     the contact list starts hidden and the notice starts visible; main.js flips both once config.js has a channel. -->
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb" aria-label="Sayfa yolu">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li aria-current="page">İletişim</li>
+    </ol>
+    <span class="eyebrow">Kurumsal</span>
+    <h1>İletişim</h1>
+    <p class="lead" data-contact-only hidden>Kurumunuza özel bir program, etkinlik ya da danışmanlık için bize yazın; ihtiyacınızı birlikte değerlendirelim.</p>
+    <p class="lead" data-contact-empty>Kurumlara özel eğitim, organizasyon ve danışmanlık programları tasarlıyor ve uyguluyoruz.</p>
+  </div>
+</section>
+
+<!-- Contact details + form -->
+<section class="section" id="bize-ulasin">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow">TUKSAL Danışmanlık</span>
+        <h2>İletişim Bilgileri</h2>
+        <p class="lead">Emel Özbek Eğitim ve Proje Ajansı</p>
+        <p class="notice" data-contact-empty>Telefon ve e-posta bilgilerimiz çok yakında bu sayfada yayımlanacaktır.</p>
+        <ul class="contact-list" hidden>
+          <li>
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg></span>
+            <div><strong>E-posta</strong><a href="#" data-email></a></div>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><strong>Telefon</strong><a href="#" data-phone></a></div>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg></span>
+            <div><strong>WhatsApp</strong><a href="#" data-whatsapp target="_blank" rel="noopener">WhatsApp ile yazın</a></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Field names are read by main.js (ad, kurum, eposta, telefon, konu, mesaj); "website" is the honeypot. -->
+      <form class="form" id="contact-form" novalidate aria-labelledby="form-title" hidden>
+        <h2 id="form-title">Mesaj Gönderin</h2>
+        <p><small>* ile işaretli alanlar zorunludur.</small></p>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-ad">Ad Soyad *</label>
+            <input id="f-ad" name="ad" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-kurum">Kurum</label>
+            <input id="f-kurum" name="kurum" type="text" autocomplete="organization">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-eposta">E-posta *</label>
+            <input id="f-eposta" name="eposta" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-telefon">Telefon</label>
+            <input id="f-telefon" name="telefon" type="tel" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-konu">Konu</label>
+          <select id="f-konu" name="konu">
+            <option value="">Konu seçin</option>
+            <option>Eğitim ve Organizasyon Programları</option>
+            <option>Yönetici Geliştirme</option>
+            <option>Müşteri Yönetimi</option>
+            <option>Marka Koruma ve Hikâyesi</option>
+            <option>Pazarlama ve Dinamik Satış</option>
+            <option>İK ve İşe Alım</option>
+            <option>Etkinlik Bilgisi</option>
+            <option>Diğer</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-mesaj">Mesaj *</label>
+          <textarea id="f-mesaj" name="mesaj" rows="6" required></textarea>
+        </div>
+        <div class="honeypot" aria-hidden="true"><label>Web sitesi<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="field field--check">
+          <input id="f-kvkk" name="kvkk" type="checkbox" required>
+          <label for="f-kvkk"><a href="kvkk.html">KVKK Aydınlatma Metni</a>'ni okudum ve anladım.</label>
+        </div>
+        <button class="btn btn--primary" type="submit">Mesaj Gönder</button>
+        <div class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>

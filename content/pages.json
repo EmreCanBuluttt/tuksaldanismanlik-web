@@ -1,0 +1,267 @@
+{
+  "site": {
+    "name": "TUKSAL Danışmanlık",
+    "legal_name": "Emel Özbek Eğitim ve Proje Ajansı",
+    "tagline": "Kurumlara Özel Deneyimsel Gelişim Programı",
+    "url": "https://www.tuksaldanismanlik.com",
+    "email": "",
+    "address_lines": [],
+    "og_image": "assets/img/kart.jpg",
+    "locale": "tr_TR"
+  },
+  "nav": [
+    {
+      "label": "Ana Sayfa",
+      "href": "index.html"
+    },
+    {
+      "label": "Hakkımızda",
+      "href": "hakkimizda.html"
+    },
+    {
+      "label": "Hizmetler",
+      "href": "hizmetler.html",
+      "children": [
+        {
+          "group": "Eğitim ve Organizasyon Programları",
+          "items": [
+            {
+              "label": "Tüm Eğitim ve Organizasyon Programları",
+              "href": "egitim-ve-organizasyon.html"
+            },
+            {
+              "label": "Sempozyum, Kongre, Seminer, Fuar",
+              "href": "sempozyum-kongre-seminer-fuar.html"
+            },
+            {
+              "label": "Bireysel Gelişim ve Performans Artırma",
+              "href": "bireysel-gelisim-ve-performans.html"
+            },
+            {
+              "label": "Eğitim Organizasyonları ve Aktiviteler",
+              "href": "egitim-organizasyonlari-ve-aktiviteler.html"
+            },
+            {
+              "label": "Yönetici Geliştirme",
+              "href": "yonetici-gelistirme.html"
+            },
+            {
+              "label": "Müşteri Yönetimi Programı",
+              "href": "musteri-yonetimi-programi.html"
+            },
+            {
+              "label": "Ekip Yönetimi, Performans ve Planlama",
+              "href": "ekip-yonetimi-performans-ve-planlama.html"
+            }
+          ]
+        },
+        {
+          "group": "Marka",
+          "items": [
+            {
+              "label": "Marka Koruma ve Hikâyesi",
+              "href": "marka-koruma-ve-hikayesi.html"
+            }
+          ]
+        },
+        {
+          "group": "Pazarlama ve Dinamik Satış",
+          "items": [
+            {
+              "label": "Tüm Pazarlama ve Satış Hizmetleri",
+              "href": "pazarlama-ve-dinamik-satis.html"
+            },
+            {
+              "label": "Pazarlama ve Satış Stratejisi",
+              "href": "pazarlama-ve-dinamik-satis.html#strateji"
+            },
+            {
+              "label": "Satışı Çözümleme",
+              "href": "pazarlama-ve-dinamik-satis.html#satis-cozumleme"
+            },
+            {
+              "label": "Müşteri Deneyimi ve Sadakat",
+              "href": "pazarlama-ve-dinamik-satis.html#musteri-deneyimi-ve-sadakat"
+            },
+            {
+              "label": "Satış, Satış Sonrası ve Takip",
+              "href": "pazarlama-ve-dinamik-satis.html#satis-sonrasi-ve-takip"
+            },
+            {
+              "label": "İK Yönetimi ve İşe Alım Danışmanlığı",
+              "href": "pazarlama-ve-dinamik-satis.html#ik-yonetimi"
+            },
+            {
+              "label": "İş Gücü Artırma ve Kârlılık",
+              "href": "pazarlama-ve-dinamik-satis.html#is-gucu-ve-karlilik"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Anlaşmalı Markalar",
+      "href": "anlasmali-markalar.html"
+    },
+    {
+      "label": "Referanslar",
+      "href": "referanslar.html"
+    },
+    {
+      "label": "Etkinlik Takvimi",
+      "href": "etkinlik-takvimi.html"
+    },
+    {
+      "label": "İletişim",
+      "href": "iletisim.html",
+      "cta": true
+    }
+  ],
+  "footer_nav": {
+    "Hizmetler": [
+      {
+        "label": "Eğitim ve Organizasyon",
+        "href": "egitim-ve-organizasyon.html"
+      },
+      {
+        "label": "Yönetici Geliştirme",
+        "href": "yonetici-gelistirme.html"
+      },
+      {
+        "label": "Müşteri Yönetimi",
+        "href": "musteri-yonetimi-programi.html"
+      },
+      {
+        "label": "Ekip Yönetimi ve Planlama",
+        "href": "ekip-yonetimi-performans-ve-planlama.html"
+      },
+      {
+        "label": "Marka Koruma ve Hikâyesi",
+        "href": "marka-koruma-ve-hikayesi.html"
+      },
+      {
+        "label": "Pazarlama ve Dinamik Satış",
+        "href": "pazarlama-ve-dinamik-satis.html"
+      }
+    ],
+    "Kurumsal": [
+      {
+        "label": "Hakkımızda",
+        "href": "hakkimizda.html"
+      },
+      {
+        "label": "Anlaşmalı Markalar",
+        "href": "anlasmali-markalar.html"
+      },
+      {
+        "label": "Referanslar",
+        "href": "referanslar.html"
+      },
+      {
+        "label": "Etkinlik Takvimi",
+        "href": "etkinlik-takvimi.html"
+      },
+      {
+        "label": "İletişim",
+        "href": "iletisim.html"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "slug": "index",
+      "title": "Kurumlara Özel Deneyimsel Gelişim Programı",
+      "description": "TUKSAL Danışmanlık — Emel Özbek Eğitim ve Proje Ajansı. Eğitim ve organizasyon programları, yönetici geliştirme, müşteri yönetimi, marka ve pazarlama danışmanlığı.",
+      "body_class": "page-home",
+      "title_is_full": false
+    },
+    {
+      "slug": "hakkimizda",
+      "title": "Hakkımızda",
+      "description": "TUKSAL Danışmanlık — Emel Özbek Eğitim ve Proje Ajansı: kurumlara özel deneyimsel gelişim programlarının arkasındaki yaklaşım."
+    },
+    {
+      "slug": "hizmetler",
+      "title": "Hizmetlerimiz",
+      "description": "Eğitim ve organizasyon programları, marka koruma ve hikâyesi, pazarlama ve dinamik satış: TUKSAL Danışmanlık'ın kurumlara sunduğu tüm hizmetler."
+    },
+    {
+      "slug": "egitim-ve-organizasyon",
+      "title": "Eğitim ve Organizasyon Programları",
+      "description": "Sempozyum ve kongre organizasyonlarından yönetici geliştirmeye, bireysel performanstan ekip planlamasına altı başlıkta kurumlara özel programlar."
+    },
+    {
+      "slug": "sempozyum-kongre-seminer-fuar",
+      "title": "Sempozyum, Kongre, Seminer ve Fuar Organizasyonları",
+      "description": "Konuşmacı yönetiminden teknik altyapıya, kayıt sistemlerinden sponsorluk yönetimine kadar sempozyum, seminer, kongre ve fuar organizasyonlarının tüm süreçleri."
+    },
+    {
+      "slug": "bireysel-gelisim-ve-performans",
+      "title": "Bireysel Gelişim ve Performans Artırma",
+      "description": "Bireylerin potansiyelini keşfetmesi, güçlü yönlerini geliştirmesi ve profesyonel yaşamda daha yüksek performans göstermesi için kişiye özel gelişim çalışmaları."
+    },
+    {
+      "slug": "egitim-organizasyonlari-ve-aktiviteler",
+      "title": "Eğitim Organizasyonları ve Aktiviteler",
+      "description": "Kuruma özel eğitim programları, atölyeler, takım oyunları ve deneyimsel aktivitelerle öğrenmeyi deneyime, deneyimi performansa dönüştüren organizasyonlar."
+    },
+    {
+      "slug": "yonetici-gelistirme",
+      "title": "Yönetici Geliştirme Programı",
+      "description": "Liderlik, geri bildirim, ekip yönetimi, performans ve kriz yönetimi: yöneticilerin liderlik yetkinliklerini güçlendiren, ölçülebilir gelişim programı."
+    },
+    {
+      "slug": "musteri-yonetimi-programi",
+      "title": "Müşteri Yönetimi Programı",
+      "description": "Müşteriyi anlamak, doğru iletişim kurmak, güven oluşturmak ve uzun vadeli değer yaratmak için işletmelere özel müşteri yönetimi programı."
+    },
+    {
+      "slug": "ekip-yonetimi-performans-ve-planlama",
+      "title": "Ekip Yönetimi, Performans ve Planlama",
+      "description": "Ekipleri ortak hedefte buluşturan, performansı ölçülebilir hale getiren ve planlama ile verimliliği artıran ekip yönetimi programları."
+    },
+    {
+      "slug": "marka-koruma-ve-hikayesi",
+      "title": "Marka Koruma ve Hikâyesi",
+      "description": "Markanın geçmişten gelen değerlerini korurken geleceğe yönelik güçlü ve sürdürülebilir bir marka hikâyesi oluşturma desteği."
+    },
+    {
+      "slug": "pazarlama-ve-dinamik-satis",
+      "title": "Pazarlama ve Dinamik Satış",
+      "description": "Pazarlama ve satış stratejisi, satış çözümleme, müşteri deneyimi ve sadakat, satış sonrası takip, İK ve işe alım danışmanlığı, iş gücü ve kârlılık."
+    },
+    {
+      "slug": "anlasmali-markalar",
+      "title": "Anlaşmalı Marka ve Kurumlar",
+      "description": "TUKSAL Danışmanlık'ın iş birliği yaptığı anlaşmalı marka ve kurumlar."
+    },
+    {
+      "slug": "referanslar",
+      "title": "Referanslar",
+      "description": "Birlikte çalıştığımız kurumların tavsiye ve referans mektupları.",
+      "hidden": true
+    },
+    {
+      "slug": "etkinlik-takvimi",
+      "title": "Etkinlik Takvimi",
+      "description": "TUKSAL Danışmanlık seminer, atölye ve eğitim etkinlikleri takvimi."
+    },
+    {
+      "slug": "iletisim",
+      "title": "İletişim",
+      "description": "TUKSAL Danışmanlık — Emel Özbek Eğitim ve Proje Ajansı iletişim bilgileri."
+    },
+    {
+      "slug": "kvkk",
+      "title": "KVKK Aydınlatma Metni",
+      "description": "Kişisel verilerin korunması hakkında aydınlatma metni.",
+      "noindex": true
+    },
+    {
+      "slug": "404",
+      "title": "Sayfa Bulunamadı",
+      "description": "Aradığınız sayfa bulunamadı.",
+      "noindex": true
+    }
+  ]
+}
